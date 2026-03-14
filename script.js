@@ -94,4 +94,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    /* --- CONTACT FORM SUBMISSION UX --- */
+    const contactForm = document.getElementById('cyberForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', () => {
+            const btn = contactForm.querySelector('button');
+            const originalText = btn.textContent;
+            
+            btn.textContent = 'DATA SENT SUCCESSFULLY';
+            btn.style.background = 'linear-gradient(135deg, #00FFCC, #00AEEF)';
+            
+            // clear the form after a slight delay to allow the POST to complete
+            setTimeout(() => {
+                contactForm.reset();
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.style.background = ''; // reset to class styling
+                }, 3000);
+            }, 500);
+        });
+    }
 });
