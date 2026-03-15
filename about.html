@@ -59,6 +59,10 @@
             display: block;
         }
 
+        .about-intro-grid {
+            grid-template-columns: 0.8fr 1.2fr;
+        }
+
         @media screen and (max-width: 768px) {
             .vision-mission-grid {
                 grid-template-columns: 1fr;
@@ -66,6 +70,15 @@
 
             .about-hero {
                 padding-top: var(--space-12);
+            }
+
+            .about-intro-grid {
+                grid-template-columns: 1fr !important;
+            }
+
+            .intro-image-wrapper {
+                order: -1; /* Image on top for mobile */
+                margin-bottom: var(--space-4);
             }
         }
 
@@ -151,7 +164,7 @@
         <!-- Company Intro -->
         <section class="about-content-section">
             <div class="container">
-                <div class="about-grid" style="grid-template-columns: 0.8fr 1.2fr;">
+                <div class="about-grid about-intro-grid">
                     <div class="about-text">
                         <p><strong>ekko electric</strong> stands as a premier manufacturer of top-quality Low Tension
                             (LT) panel boards, catering to a diverse array of industries with precision and excellence.
@@ -166,7 +179,7 @@
                             Failure (AMF) Panels, and Customized Panels. Each product is designed to cater to specific
                             requirements.</p>
                     </div>
-                    <div class="about-image">
+                    <div class="about-image intro-image-wrapper">
                         <img src="assets/ekko_electric.png" alt="Manufacturing Facility" class="facility-image">
                     </div>
                 </div>

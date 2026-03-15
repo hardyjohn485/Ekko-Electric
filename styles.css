@@ -818,6 +818,11 @@ section {
     .footer-brand {
         align-items: center !important;
     }
+
+    /* Fix for iOS background visibility */
+    .hero-section, .products-section, .projects-section, .testimonial-section, .about-hero, .location-section {
+        background-attachment: scroll !important;
+    }
 }
 
 @media screen and (max-width: 480px) {
