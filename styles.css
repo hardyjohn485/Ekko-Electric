@@ -165,16 +165,22 @@ img {
 .btn-primary {
     background: var(--clr-primary);
     color: #fff;
-    border: none;
+    border: 1px solid var(--clr-primary);
+}
+
+.btn-primary:hover {
+    background: #FFFFFF;
+    color: var(--clr-primary);
 }
 
 .btn-secondary {
-    background: transparent;
+    background: #FFFFFF;
     color: var(--clr-primary);
     border: 1px solid var(--clr-primary);
 }
 .btn-secondary:hover {
-    background: rgba(0, 114, 188, 0.05);
+    background: var(--clr-primary);
+    color: #FFFFFF;
 }
 
 .glow-btn:hover {
@@ -673,10 +679,7 @@ section {
    FOOTER
    ========================================= */
 .cyber-footer {
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('assets/product-bg-premium.png');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    background: var(--clr-bg-alt);
     border-top: 1px solid var(--clr-border);
     padding-top: var(--space-8);
 }
@@ -789,7 +792,12 @@ section {
    LOCATION SECTION
    ========================================= */
 .location-section {
-    padding-bottom: var(--space-12);
+    padding: var(--space-12) 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url('assets/product-bg-premium.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-top: 1px solid var(--clr-border);
 }
 
 .map-container {

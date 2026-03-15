@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | ekko ELECTRIC - Excellence in Panel Board Manufacturing</title>
+    <meta name="description"
+        content="Learn about ekko ELECTRIC's journey, vision, and mission in delivering top-quality LT panel boards and electrical solutions in Kerala.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Roboto:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .about-hero {
+            padding: var(--space-12) 0 var(--space-6);
+            background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url('assets/product-bg-premium.png');
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        .about-content-section {
+            padding: var(--space-8) 0;
+        }
+
+        .vision-mission-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--space-3);
+            margin-top: var(--space-4);
+        }
+
+        .value-card {
+            text-align: center;
+            padding: var(--space-4);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-icon {
+            font-size: 2rem;
+            color: var(--clr-primary);
+            margin-bottom: var(--space-2);
+            display: block;
+        }
+
+        .product-portfolio-section {
+            background-color: var(--clr-bg-alt);
+            padding: var(--space-8) 0;
+            border-top: 1px solid var(--clr-border);
+            border-bottom: 1px solid var(--clr-border);
+        }
+
+        .portfolio-list-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-4);
+        }
+
+        .portfolio-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: 1.1rem;
+        }
+
+        .portfolio-item span {
+            color: var(--clr-primary);
+            font-weight: bold;
+        }
+
+        .facility-image {
+            width: 100%;
+            border-radius: var(--br-md);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: var(--space-4);
+        }
+
+        @media (max-width: 768px) {
+
+            .vision-mission-grid,
+            .portfolio-list-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="glass-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" style="height: 80px; width: auto;" alt="Ekko Electric Logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="index.html#products">Our Products</a></li>
+                    <li><a href="index.html#services">Our Services</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="assets/ekko_portfolio.pdf" target="_blank">Portfolio</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="about-hero">
+            <div class="container">
+                <h1 class="section-title">ABOUT <span class="text-gradient">US</span></h1>
+                <p class="section-desc">Pioneering excellence in electrical solutions since our inception.</p>
+                <div class="cyber-line center-line"></div>
+            </div>
+        </section>
+
+        <!-- Company Intro -->
+        <section class="about-content-section">
+            <div class="container">
+                <div class="about-grid" style="grid-template-columns: 0.8fr 1.2fr;">
+                    <div class="about-text">
+                        <p><strong>ekko electric</strong> stands as a premier manufacturer of top-quality Low Tension
+                            (LT) panel boards, catering to a diverse array of industries with precision and excellence.
+                            Since our inception, we have been dedicated to pioneering electrical solutions that not only
+                            meet but exceed the highest industry standards.</p>
+                        <p>Our journey began with a vision to revolutionize the electrical manufacturing sector by
+                            providing reliable and innovative products. Over the years, we have cultivated a deep
+                            understanding of our client's needs, enabling us to deliver customized solutions that ensure
+                            optimal performance and safety.</p>
+                        <p>Our extensive product portfolio includes Power Control Centers (PCC), Motor Control Centers
+                            (MCC), Distribution Boards, Automatic Power Factor Correction (APFC) Panels, Automatic Mains
+                            Failure (AMF) Panels, and Customized Panels. Each product is designed to cater to specific
+                            requirements.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="assets/ekko_electric.png" alt="Manufacturing Facility" class="facility-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vision & Mission -->
+        <section class="about-content-section" style="background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url('assets/product-bg-premium.png'); background-size: cover; background-position: center; background-attachment: fixed; border-top: 1px solid var(--clr-border); border-bottom: 1px solid var(--clr-border);">
+            <div class="container">
+                <div class="vision-mission-grid">
+                    <div class="glass-card">
+                        <h2 class="section-title" style="font-size: 2rem;">Our <span class="text-gradient">Vision</span>
+                        </h2>
+                        <p>To be the preferred choice for electrical panel boards worldwide, known for our quality,
+                            innovation, and customer-centric approach.</p>
+                    </div>
+                    <div class="glass-card">
+                        <h2 class="section-title" style="font-size: 2rem;">Our <span
+                                class="text-gradient">Mission</span></h2>
+                        <p>Our mission is to provide top-notch electrical solutions that enhance the safety, efficiency,
+                            and reliability of our client's operations. We strive to lead the industry with our
+                            innovative designs, superior quality, and exceptional customer service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values -->
+        <section class="about-content-section">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2 class="section-title">Our <span class="text-gradient">Values</span></h2>
+                    <div class="cyber-line center-line"></div>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card glass-card">
+                        <span class="value-icon">🛡️</span>
+                        <h3>Safety</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">💎</span>
+                        <h3>Quality</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">🤝</span>
+                        <h3>Integrity</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">💡</span>
+                        <h3>Innovation</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">⚡</span>
+                        <h3>Timely Response</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">😊</span>
+                        <h3>Customer Satisfaction</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">🚀</span>
+                        <h3>Faster Delivery</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">🌿</span>
+                        <h3>Sustainability</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">🛠️</span>
+                        <h3>Craftsmanship</h3>
+                    </div>
+                    <div class="value-card glass-card">
+                        <span class="value-icon">🛡️</span>
+                        <h3>Accountability</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Portfolio List -->
+        <section class="product-portfolio-section" style="background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url('assets/product-bg-premium.png'); background-size: cover; background-position: center; background-attachment: fixed;">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">FULL PRODUCT <span class="text-gradient">PORTFOLIO</span></h2>
+                    <p class="section-desc">Comprehensive range of specialized electrical control panels.</p>
+                    <div class="cyber-line"></div>
+                </div>
+                <div class="portfolio-list-grid">
+                    <div class="portfolio-item"><span>⬢</span> Metering Panels</div>
+                    <div class="portfolio-item"><span>⬢</span> VFD Panels</div>
+                    <div class="portfolio-item"><span>⬢</span> Distribution Panels</div>
+                    <div class="portfolio-item"><span>⬢</span> Enclosures</div>
+                    <div class="portfolio-item"><span>⬢</span> Motor Control Centers (MCC)</div>
+                    <div class="portfolio-item"><span>⬢</span> PLC Control Panels</div>
+                    <div class="portfolio-item"><span>⬢</span> Power Control Centers (PCC)</div>
+                    <div class="portfolio-item"><span>⬢</span> HVAC Control Panels</div>
+                    <div class="portfolio-item"><span>⬢</span> Auto Mains Failure (AMF) Panels</div>
+                    <div class="portfolio-item"><span>⬢</span> BDV & High Voltage Tester</div>
+                    <div class="portfolio-item"><span>⬢</span> Automatic Power Factor Correction (APFC) Panels</div>
+                    <div class="portfolio-item"><span>⬢</span> Primary & Secondary Injection Test kit</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container footer-content">
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: flex-start;">
+                <a href="index.html" style="display: block;">
+                    <img src="assets/logo.jpg" style="height: 160px; width: auto; margin-bottom: 16px; display: block;"
+                        alt="Ekko Electric Logo">
+                </a>
+                <p>CONTROL PANELS | MEASUREMENTS | PROTECTION</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-seo">
+                <h4>Expertise</h4>
+                <ul>
+                    <li><a href="#">Panel Board Manufacturing</a></li>
+                    <li><a href="#">Electrical Control Panels</a></li>
+                    <li><a href="#">Electrical Panel Board</a></li>
+                    <li><a href="#">3 Phase Electrical Panel Board</a></li>
+                    <li><a href="#">Control Panel Electrical Panel Board</a></li>
+                    <li><a href="#">Electrical Panel Board For Home</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© All rights reserved. ekko electric</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

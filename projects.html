@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | ekko ELECTRIC</title>
+    <meta name="description" content="Explore the diverse range of electrical panel board projects we've completed.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Roboto:wght@500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .projects-page-hero {
+            padding: var(--space-12) 0 var(--space-6);
+            background: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url('assets/product-bg-premium.png');
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+            margin-top: 80px;
+            /* Offset for fixed header */
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: var(--space-4);
+            margin-top: var(--space-6);
+        }
+
+        .project-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--clr-primary-glow);
+            color: var(--clr-primary);
+            border-radius: 16px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .project-detail-card {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-detail-card h3 {
+            color: var(--clr-primary);
+            margin-bottom: var(--space-2);
+            font-size: 1.3rem;
+        }
+
+        .project-detail-card .tags-container {
+            margin-bottom: var(--space-3);
+        }
+
+        .project-detail-card ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-bottom: var(--space-3);
+            flex-grow: 1;
+        }
+
+        .project-detail-card li {
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+            color: var(--clr-text);
+        }
+
+        .project-detail-card li strong {
+            color: var(--clr-text-muted);
+        }
+
+        .project-summary {
+            font-size: 0.9rem;
+            color: var(--clr-text-muted);
+            font-style: italic;
+            border-top: 1px solid var(--clr-border);
+            padding-top: var(--space-2);
+            margin-top: auto;
+        }
+
+        /* Lightbox Styles */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            cursor: zoom-out;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lightbox-overlay.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .lightbox-image {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: var(--br-md);
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .lightbox-overlay.active .lightbox-image {
+            transform: scale(1);
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        /* Project Image Hover */
+        .project-detail-card img {
+            cursor: zoom-in;
+            transition: transform 0.3s ease;
+        }
+
+        .project-detail-card img:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header class="glass-header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.jpg" style="height: 80px; width: auto;" alt="Ekko Electric Logo">
+            </a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="index.html#products">Our Products</a></li>
+                    <li><a href="index.html#services">Our Services</a></li>
+                    <li><a href="projects.html" class="active">Projects</a></li>
+                    <li><a href="assets/ekko_portfolio.pdf" target="_blank">Portfolio</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact" class="btn-primary">Contact Us</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="projects-page-hero">
+            <div class="container">
+                <h1 class="section-title">OUR <span class="text-gradient">PROJECTS</span></h1>
+                <p class="section-desc">Showcasing our innovation and technical expertise across various industrial
+                    domains.</p>
+                <div class="cyber-line center-line"></div>
+            </div>
+        </section>
+
+        <!-- Projects Grid Section -->
+        <section class="alternate-bg" style="padding: var(--space-8) 0;">
+            <div class="container">
+                <div class="projects-grid">
+
+                    <!-- Project 1 -->
+                    <article class="glass-card hover-glow project-detail-card"
+                        style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/logo_hp.png" alt="HP Logo" style="height: 56px; object-fit: contain;">
+                            <h3
+                                style="font-family: 'Inter', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">
+                                HP MSB Panel Project</h3>
+                        </div>
+
+                        <div
+                            style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/hp_msb.png" alt="HP MSB Panel Project Image"
+                                style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container"
+                            style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">HINDUSTAN PETROLEUM</span>
+                                <span class="project-tag">MAIN SWITCH BOARD</span>
+                                <span class="project-tag">FLOOR-MOUNTED</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> Main Switch Board (MSB) Panel</li>
+                                <li><strong>Main Incomer:</strong> Manual Changeover Switch with high-capacity HRC Fuse Carriers</li>
+                                <li><strong>Outgoing Circuits:</strong> TPN SFUs, RCBOs, and modular MCB distribution</li>
+                                <li><strong>Monitoring & Control:</strong> Analog Voltmeter/Ammeter systems with LED status indicators</li>
+                                <li><strong>Construction:</strong> Heavy-duty floor-mounted modular enclosure</li>
+                                <li><strong>Busbars:</strong> High-conductivity Aluminum/Copper busbar system with safety grading</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">A robust energy distribution solution engineered for high-performance industrial fuel station operations.</div>
+                        </div>
+                    </article>
+
+
+                    <!-- Project 2 -->
+                    <article class="glass-card hover-glow project-detail-card"
+                        style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div
+                            style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/indian_oil.png" alt="Indian Oil Logo"
+                                style="height: 56px; object-fit: contain;">
+                            <h3
+                                style="font-family: 'Inter', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">
+                                IOCL MSB Panel Project</h3>
+                        </div>
+
+                        <div
+                            style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/iocl_msb.png" alt="IOCL MSB Panel Project Image"
+                                style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container"
+                            style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">INDIAN OIL</span>
+                                <span class="project-tag">MSB SYSTEM</span>
+                                <span class="project-tag">FLOOR-MOUNTED</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> Main Switch Board (MSB) Solution</li>
+                                <li><strong>Main Incomer:</strong> Heavy-duty Manual Changeover Switch with HRC protection</li>
+                                <li><strong>Outgoing Circuits:</strong> Specialized TPN SFUs, RCBOs, and multi-point MCB distribution</li>
+                                <li><strong>Monitoring & Control:</strong> 3-Phase Analog metering system with professional RYB LED indicators</li>
+                                <li><strong>Construction:</strong> Precision-engineered floor-mounted panel structure</li>
+                                <li><strong>Busbars:</strong> High-grade Electrolytic Aluminum/Copper busbar configuration</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">Professionally fabricated to deliver reliable power distribution for critical petroleum infrastructure.</div>
+                        </div>
+                    </article>
+
+
+                    <!-- Project 3 -->
+                    <article class="glass-card hover-glow project-detail-card" style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/logo_nayara.png" alt="Nayara Energy Logo" style="height: 56px; object-fit: contain;">
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">NAYARA MSB Panel Project</h3>
+                        </div>
+
+                        <div style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/nayara_msb.png" alt="NAYARA MSB Panel Project Image" style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container" style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">NAYARA ENERGY</span>
+                                <span class="project-tag">COMPACT MSB</span>
+                                <span class="project-tag">WALL-MOUNTED</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> Compact Main Switch Board</li>
+                                <li><strong>Main Incomer:</strong> 4P Manual Changeover Switch with upstream MCCB protection</li>
+                                <li><strong>Outgoing Circuits:</strong> Advanced RCCBs and multi-pole MCB distribution network</li>
+                                <li><strong>Monitoring & Control:</strong> Analog V/A Metering with RYB phase indicators and control buttons</li>
+                                <li><strong>Construction:</strong> Space-saving wall-mounted industrial enclosure</li>
+                                <li><strong>Busbars:</strong> High-efficiency Copper busbar system</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">A specialized compact power control unit designed for efficient energy management in NAYARA's retail outlets.</div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4 -->
+                    <article class="glass-card hover-glow project-detail-card" style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/kottayam.png" alt="Kottayam Medical College Logo" style="height: 56px; object-fit: contain;">
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: clamp(1.3rem, 2.5vw, 2.2rem); font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">Kottayam Medical College MSB</h3>
+                        </div>
+
+                        <div style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/kottayam_msb.png" alt="Kottayam Medical College MSB Panel Image" style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container" style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">MEDICAL COLLEGE</span>
+                                <span class="project-tag">MULTI-OUTGOING MSB</span>
+                                <span class="project-tag">FLOOR-MOUNTED</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> Heavy-duty Main Switch Board</li>
+                                <li><strong>Main Incomer:</strong> Professional 4P Manual Changeover Switch (COS)</li>
+                                <li><strong>Outgoing Circuits:</strong> Multiple 4P MCCBs with ROM and high-clearance spreader terminals</li>
+                                <li><strong>Monitoring & Control:</strong> Multi-set LED RYB indication with centralized SP control MCBs</li>
+                                <li><strong>Construction:</strong> Industrial-grade floor-mounted cabinet design</li>
+                                <li><strong>Busbars:</strong> Premium Copper busbar system with high short-circuit tolerance</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">A mission-critical power distribution hub built to deliver maximum reliability for advanced healthcare facilities.</div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5 -->
+                    <article class="glass-card hover-glow project-detail-card" style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/honda.png" alt="Honda Logo" style="height: 56px; object-fit: contain;">
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">HONDA MSB Panel Project</h3>
+                        </div>
+
+                        <div style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/honda_msb.png" alt="Honda MSB Panel Image" style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container" style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">HONDA SHOWROOM</span>
+                                <span class="project-tag">COMMERCIAL MSB</span>
+                                <span class="project-tag">FLOOR-MOUNTED</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> Commercial Distribution Switch Board</li>
+                                <li><strong>Main Incomer:</strong> High-reliability TPN SFU Isolator with HRC Fuse protection</li>
+                                <li><strong>Outgoing Circuits:</strong> Multiple TPN SFU circuits with dedicated fuse carriers</li>
+                                <li><strong>Monitoring & Control:</strong> Digital LED VAF Multimeter with RYB phase indicators</li>
+                                <li><strong>Construction:</strong> Premium floor-mounted industrial enclosure with spare expansion slot</li>
+                                <li><strong>Busbars:</strong> High-conductivity Aluminum busbar system with safety isolation</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">An efficient and expandable power management system designed for modern automotive showrooms.</div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6 -->
+                    <article class="glass-card hover-glow project-detail-card" style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/genisys.jpg" alt="Genisys Logo" style="height: 56px; object-fit: contain;">
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: 2.2rem; font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">GENISYS MSB Panel Project</h3>
+                        </div>
+
+                        <div style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/genisys_panel.jpg" alt="Genisys MSB Panel Image" style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container" style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">GENISYS PROJECT</span>
+                                <span class="project-tag">INDUSTRIAL MSB</span>
+                                <span class="project-tag">FLOOR-MOUNTED</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> High-performance Main Switch Board</li>
+                                <li><strong>Main Incomer:</strong> TPN SFU Isolator system with integrated HRC Fuse Carriers</li>
+                                <li><strong>Outgoing Circuits:</strong> Precision TPN SFU outgoing feeders with safety locking</li>
+                                <li><strong>Monitoring & Control:</strong> Advanced Digital VAF metering with professional LED indicators</li>
+                                <li><strong>Construction:</strong> Heavy-duty industrial floor-mounted framework</li>
+                                <li><strong>Busbars:</strong> High-grade Aluminum busbar configuration with safety insulation</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">A reliable power control center engineered to support complex industrial and showroom operations.</div>
+                        </div>
+                    </article>
+
+                    <!-- Project 7 -->
+                    <article class="glass-card hover-glow project-detail-card" style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/reliance_smart.png" alt="Reliance Smart Logo" style="height: 56px; object-fit: contain;">
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: clamp(1.3rem, 2.5vw, 2.2rem); font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">RELIANCE Distribution Panel Project</h3>
+                        </div>
+
+                        <div style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/reliance_msb.png" alt="Reliance Distribution Panel Image" style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container" style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">RELIANCE RETAIL</span>
+                                <span class="project-tag">METERING PANEL</span>
+                                <span class="project-tag">FLOOR-MOUNTED</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> Retail Hub Distribution & Metering Panel</li>
+                                <li><strong>Main Incomer:</strong> Master TPN SFU system with high-rated Fuse protection</li>
+                                <li><strong>Metering:</strong> Dedicated provisions for 3-Phase and 1-Phase Energy Meters with suitable CTs</li>
+                                <li><strong>Outgoing Circuits:</strong> Robust bakelite fuse units with integrated HRC carriers</li>
+                                <li><strong>Monitoring & Control:</strong> Centralized LED VAF multimeter with RYB status indicators</li>
+                                <li><strong>Construction:</strong> Multi-compartment modular floor-mounted enclosure</li>
+                                <li><strong>Busbars:</strong> Industrial-grade Aluminum busbar layout for high current capacity</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">A comprehensive metering and distribution network tailored for high-traffic retail environments.</div>
+                        </div>
+                    </article>
+
+                    <!-- Project 8 -->
+                    <article class="glass-card hover-glow project-detail-card" style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/stmarys.jpg" alt="St. Mary's Mission Hospital Logo" style="height: 56px; object-fit: contain;">
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: clamp(1.3rem, 2.5vw, 2.2rem); font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">St. Mary's Hospital AMF Panel Project</h3>
+                        </div>
+
+                        <div style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/stmarys_amf.png" alt="St. Mary's AMF Panel Image" style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container" style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">HOSPITAL PROJECT</span>
+                                <span class="project-tag">AMF/ATS SYSTEM</span>
+                                <span class="project-tag">WALL-MOUNTED</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> Automatic Mains Failure (AMF) with ATS</li>
+                                <li><strong>Main Incomers:</strong> Dual TPN SFU system for Utility (EB) and Backup (DG) power</li>
+                                <li><strong>Automatic Transfer Switch:</strong> Advanced Elmeasure ATS for seamless power transition</li>
+                                <li><strong>Outgoing Connections:</strong> High-performance regular 4P MCCB for main loads</li>
+                                <li><strong>Monitoring & Controls:</strong> Quad-set RYB indicators with centralized control MCBs</li>
+                                <li><strong>Construction:</strong> Professional wall-mounted modular structure</li>
+                                <li><strong>Busbars:</strong> High-conductivity Aluminum busbar network</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">A reliable emergency power management solution designed to ensure uninterrupted electricity for critical healthcare services.</div>
+                        </div>
+                    </article>
+                    <!-- Project 9 -->
+                    <article class="glass-card hover-glow project-detail-card" style="align-items: center; text-align: center; padding-bottom: var(--space-4);">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 16px; margin-bottom: var(--space-4); flex-wrap: wrap;">
+                            <img src="assets/olive_logo.png" alt="Olive Logo" style="height: 56px; object-fit: contain;">
+                            <h3 style="font-family: 'Inter', sans-serif; font-size: clamp(1.3rem, 2.5vw, 2.2rem); font-weight: 800; letter-spacing: 1px; color: var(--clr-primary); text-transform: uppercase; margin-bottom: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.05);">Olive Apartments CT Meter Panel Project</h3>
+                        </div>
+
+                        <div style="width: 100%; max-width: 800px; background-color: #f8f9fa; border-radius: var(--br-md); padding: var(--space-3); margin-bottom: var(--space-4); display: flex; justify-content: center;">
+                            <img src="assets/olive_flat.png" alt="Olive Apartments CT Meter Panel Image" style="width: 100%; max-height: 500px; object-fit: contain; mix-blend-mode: darken; filter: contrast(1.05);">
+                        </div>
+
+                        <button class="btn-secondary toggle-details-btn">Show Details</button>
+
+                        <div class="project-details-container" style="display: none; text-align: left; width: 100%; margin-top: var(--space-4);">
+                            <div class="tags-container" style="text-align: center;">
+                                <span class="project-tag">OLIVE APARTMENTS</span>
+                                <span class="project-tag">CT METER PANEL</span>
+                                <span class="project-tag">ELR PROTECTION</span>
+                            </div>
+                            <ul>
+                                <li><strong>Project Type:</strong> Residential CT Metering Switch Board</li>
+                                <li><strong>Main Incomer:</strong> Specialized TPN MCCB with integrated ELR protection</li>
+                                <li><strong>Metering:</strong> Dedicated CT Metering compartments with professional digital energy meters</li>
+                                <li><strong>Protection:</strong> Integrated Earth Leakage protection for advanced consumer safety</li>
+                                <li><strong>Construction:</strong> Multi-compartment modular enclosure for easy maintenance access</li>
+                                <li><strong>Busbars:</strong> High-grade Electrolytic Aluminum busbars with industrial-standard grading</li>
+                            </ul>
+                            <div class="project-summary" style="text-align: center;">A specialized power measurement and safety solution designed for reliable operation in large-scale residential complexes.</div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="cyber-footer">
+        <div class="container footer-content">
+            <div class="footer-brand" style="display: flex; flex-direction: column; align-items: flex-start;">
+                <a href="index.html" style="display: block;">
+                    <img src="assets/logo.jpg" style="height: 160px; width: auto; margin-bottom: 16px; display: block;"
+                        alt="Ekko Electric Logo">
+                </a>
+                <p>CONTROL PANELS | MEASUREMENTS | PROTECTION</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html#about">About</a></li>
+                    <li><a href="index.html#products">Products</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-seo">
+                <h4>Expertise</h4>
+                <ul>
+                    <li><a href="#">Panel Board Manufacturing</a></li>
+                    <li><a href="#">Electrical Control Panels</a></li>
+                    <li><a href="#">Electrical Panel Board</a></li>
+                    <li><a href="#">3 Phase Electrical Panel Board</a></li>
+                    <li><a href="#">Control Panel Electrical Panel Board</a></li>
+                    <li><a href="#">Electrical Panel Board For Home</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>All rights reserved. ekko electric</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Overlay -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Zoomed Project Image" class="lightbox-image" id="lightboxImage">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Toggle Details Logic
+            const toggleButtons = document.querySelectorAll('.toggle-details-btn');
+
+            toggleButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    const detailsContainer = this.nextElementSibling;
+                    const isHidden = detailsContainer.style.display === 'none';
+
+                    if (isHidden) {
+                        detailsContainer.style.display = 'block';
+                        this.textContent = 'Hide Details';
+                    } else {
+                        detailsContainer.style.display = 'none';
+                        this.textContent = 'Show Details';
+                    }
+                });
+            });
+
+            // Lightbox Logic
+            const projectImages = document.querySelectorAll('.project-detail-card img');
+            const lightboxOverlay = document.getElementById('lightboxOverlay');
+            const lightboxImage = document.getElementById('lightboxImage');
+            const closeBtn = document.querySelector('.lightbox-close');
+
+            projectImages.forEach(img => {
+                // Only zoom in on the main project images, not logos
+                if (!img.alt.toLowerCase().includes('logo')) {
+                    img.addEventListener('click', () => {
+                        lightboxImage.src = img.src;
+                        lightboxOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden'; // Prevent scrolling
+                    });
+                }
+            });
+
+            const closeLightbox = () => {
+                lightboxOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // Enable scrolling
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+            lightboxOverlay.addEventListener('click', (e) => {
+                if (e.target === lightboxOverlay) {
+                    closeLightbox();
+                }
+            });
+
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightboxOverlay.classList.contains('active')) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
